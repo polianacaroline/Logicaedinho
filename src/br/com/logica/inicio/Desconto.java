@@ -1,4 +1,4 @@
-package br.com.logica.introducao;
+package br.com.logica.inicio;
 
 import java.util.Scanner;
 
