@@ -1,11 +1,37 @@
 // referenciar os controles: input nome, descricao, departamento e btncadastrar
+let idcat ="";
 let categoria = document.getElementById("categoria")
-let descricaocategoria = document.getElementById("descricaocategoria")
-let departamento = document.getElementById("departamento")
+let descricao = document.getElementById("descricaocategoria")
+let departa = document.getElementById("departamento")
 let btncadastrar = document.getElementById("btncadastrar")
 
 // realizar o cadastro quando o botao for clicado
 btncadastrar.onclick = ()=>{
+
+  if(btncadastrar.value=="Atualizar"){
+    
+    fetch("http://10.26.44.18:5000/api/v1/categoria/atualizar/"+idcat, {
+    method:"PUT",
+    headers:{ 
+        "accept":"application/json" ,
+        "content-type":"application/json"
+    },
+    body:JSON.stringify({ 
+      categoria:categoria.value,
+      descricaocategoria:descricao.value,
+      departamento:departa.value,                                    
+})
+  })
+
+.then((response)=>response.json())
+.then((dados)=>alert("Atualizado"))
+.catch((error)=>console.error(error))
+}
+else {
+
+
+
+  
   fetch("http://10.26.44.18:5000/api/v1/categoria/cadastrar" , {
     method:"POST",
     headers:{ 
@@ -14,17 +40,19 @@ btncadastrar.onclick = ()=>{
     },
     body:JSON.stringify({ 
       categoria:categoria.value,
-      descricaocategoria:descricaocategoria.value,
-      departamento:departamento.value,
-                                     
-    
+      descricaocategoria:descricao.value,
+      departamento:departa.value,                                    
 })
-
   })
+
 
 .then((response)=>response.json())
 .then((dados)=>alert(dados))
 .catch((error)=>console.error(error))
+}
+
+window.location.reload();//atualizar a tela
+
 }
 // exibir as catgorias cadastradas 
 function exibirCategorias(){ 
@@ -37,7 +65,7 @@ function exibirCategorias(){
       <td>${itens.categoria}</td>
       <td>${itens.departamento}</td>
       <td>${itens.descricaocategoria}</td>
-      <td><a href=# onclick="atualizar('${itens.idcategoria}','${itens.categoria}','${itens.descricaocategoria}','${departamento}')">
+      <td><a href=# onclick="atualizar('${itens.idcategoria}','${itens.categoria}','${itens.descricaocategoria}','${itens.departamento}')">
       Atualizar
       </a>
       <td><a href=# onclick=Apagar('${itens.idcategoria}')>
@@ -52,11 +80,17 @@ document.getElementsByTagName("tbody")[0].innerHTML=saida;
     }).catch((error)=>console.error("Erro na api"+error))
 
 }
-function atualizar(id, cat, descricaocategoria, departamento){
+function atualizar(id, cat, descr, depart){
+idcat = id;
  categoria.value = cat;
- descricaocategoria.value = desc;
- departamento.value = depart;
 
+
+ console.log(`${id} ${cat} ${descr} ${depart}`)
+
+ document.getElementById("btncadastrar").value="Atualizar";
+
+
+ 
 
 
 }
