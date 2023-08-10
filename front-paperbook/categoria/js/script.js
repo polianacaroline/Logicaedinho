@@ -46,7 +46,7 @@ btncadastrar.onclick = ()=>{
     else {
 
 
-  fetch("http://10.26.44.18:5000/api/v1/categoria/cadastrar" , {
+  fetch("http://10.26.45.18:5000/api/v1/categoria/cadastrar" , {
     method:"POST",
     headers:{ 
         "accept":"application/json" ,
@@ -106,7 +106,7 @@ function atualizar(id, cat, depart, desc){
 }
 function Apagar(id){
   let saida= "";
-  fetch("http://10.26.44.18:5000/api/v1/categoria/apagar/"+id,{method:"DELETE"})
+  fetch("http://10.26.45.32:5000/api/v1/categoria/apagar/"+id,{method:"DELETE"})
   .then((response)=>response.json())
   .then((dados)=>{ 
     
