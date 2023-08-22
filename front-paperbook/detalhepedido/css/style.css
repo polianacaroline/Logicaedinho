@@ -1,0 +1,38 @@
+
+h1{
+    font-family: "arial";;
+    text-align: center;
+    border-bottom: 3px solid rgb(187, 29, 90);
+    
+    }
+    ul{
+    list-style: none;
+    
+    }
+    #lstheader li{
+        display: inline-block;
+        font-weight: bold;
+        font-family: arial;
+        width: 19%;
+        border-bottom:1px solid rgb(211, 33, 235);
+    
+        
+    }
+    
+
+#itemdetalhepedido li{
+    display: inline-block;
+    font-weight: bold;
+    font-family: arial;
+    width: 19%;
+   
+}
+#itemdetalhepedido {
+    padding: 10px;
+    padding-left: 90px;
+    transition: ease 1s;
+}
+#itemdetalhepedido:hover{
+    cursor: pointer;
+    background-color: silver;
+}

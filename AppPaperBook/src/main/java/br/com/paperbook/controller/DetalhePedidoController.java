@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.paperbook.domain.Pedido;
-import br.com.paperbook.repository.PedidoRepository;
+import br.com.paperbook.domain.DetalhePedido;
+import br.com.paperbook.repository.DetalhePedidoRepository;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/v1/pedido")
-public class PedidoController {
+@RequestMapping("/api/v1/detalhepedido")
 
+public class DetalhePedidoController {
 	@Autowired
-	private PedidoRepository pedidoRepo;
+	private DetalhePedidoRepository dpRepo;
 
 	@GetMapping("/listar")
-	public List<Pedido> listar() {
-		return pedidoRepo.findAll();
+	public List<DetalhePedido> listar() {
+		return dpRepo.findAll();
 	}
 
 }

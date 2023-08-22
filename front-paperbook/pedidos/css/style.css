@@ -1,0 +1,36 @@
+h1{
+font-family: "arial";;
+text-align: center;
+border-bottom: 2px double rgb(236, 14, 14);
+
+}
+ul{
+list-style: none;
+
+}
+#lstheader li{
+    display: inline-block;
+    font-weight: bold;
+    font-family: arial;
+    width: 19%;
+    border-bottom:1px solid rgb(41, 87, 240);
+
+    
+}
+
+#itempedido li{
+    display: inline-block;
+    font-weight: bold;
+    font-family: arial;
+    width: 19%;
+   
+}
+#itempedido {
+    padding: 10px;
+    padding-left: 90px;
+    transition: ease 1s;
+}
+#itempedido:hover{
+    cursor: pointer;
+    background-color: silver;
+}
