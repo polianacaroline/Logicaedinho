@@ -92,6 +92,7 @@ input[type="submit"]:hover{
     border-radius: 50px;
     font-size: large;
     text-decoration: none;
+    line-height: 5;
 
 }
 #form a:hover{

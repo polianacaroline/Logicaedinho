@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
     <div id="struct">
@@ -14,14 +14,16 @@
         </div>
         <div id="form">
             <img src="images/icon.png" alt="icone">
-            <h2>Faça seu Login</h2>
+            <h2>Faça seu Cadastro</h2>
             
             <form onsubmit="return false">
-                
+                <input type="text" placeholder="Nível Acesso"id="nivelacesso"/>
                 <input type="text" placeholder="Nome de Usuário"id="login"/>
                 <input type="password" placeholder="Senha" id="senha"/>
-                <input type="submit" value="Logar"onclick="logar();"/>
-                <a href="#"> cadastrar </a>
+                <input type="password" placeholder="Confirmar" id="Confirmar"/>
+               
+                <a href="#" onclick= "cadastrar()">Cadastrar</a>
+
             </form>
         </div>
     </div>
